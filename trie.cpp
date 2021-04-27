@@ -4,7 +4,6 @@
 #include <stdlib.h>
 using namespace std;
 struct node{
-
       bool endmark;
       node *next[10];
       node()
@@ -14,10 +13,7 @@ struct node{
           {
               next[i]=NULL;
           }
-
       }
-
-
 }*root;
 
 bool insert(char *str,int len)
@@ -25,7 +21,7 @@ bool insert(char *str,int len)
     bool ss=true;;
     node *curr=root;
     if(curr->endmark==true)
-            return false;
+        return false;
     for(int i=0;i<len-1;i++)
     {
         int id=str[i]-'0';
@@ -67,8 +63,6 @@ void del(node* curr)
             del(curr->next[i]);
             delete curr->next[i];
         }
-
-
     }
 }
 int main()
